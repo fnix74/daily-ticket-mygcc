@@ -6,7 +6,6 @@ from datetime import datetime
 st.set_page_config(page_title="Daily Ticket Helpdesk")
 
 st.title("Daily Ticket Helpdesk")
-st.write("Upload a CSV file, and get a processed Excel file in return.")
 
 # File uploader
 uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
