@@ -5,7 +5,7 @@ from datetime import datetime
 
 st.set_page_config(page_title="Ticket Helpdesk CSV to Excel Converter")
 
-st.title("🎫 Daily Ticket Helpdesk CSV to Excel Converter")
+st.title("Ticket Helpdesk CSV to Excel Converter")
 st.write("Upload a CSV file, and get a processed Excel file in return.")
 
 # File uploader
