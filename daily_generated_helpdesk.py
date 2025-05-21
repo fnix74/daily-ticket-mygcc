@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 import io
+from datetime import datetime
 
-st.set_page_config(page_title="Ticket CSV to Excel Converter")
+st.set_page_config(page_title="Ticket Helpdesk CSV to Excel Converter")
 
-st.title("🎫 Ticket CSV to Excel Converter")
+st.title("🎫 Daily Ticket Helpdesk CSV to Excel Converter")
 st.write("Upload a CSV file, and get a processed Excel file in return.")
 
 # File uploader
@@ -79,9 +80,14 @@ if uploaded_file is not None:
     df.to_excel(output, index=False)
     output.seek(0)
 
+    # Generate dynamic file name
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    dynamic_filename = f"ticket-helpdesk-{today_str}.xlsx"
+
+    # Download button with dynamic filename
     st.download_button(
         label="📥 Download Excel File",
         data=output,
-        file_name="converted_tickets.xlsx",
+        file_name=dynamic_filename,
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
